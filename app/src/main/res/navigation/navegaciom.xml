@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegaciom"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/contactos"
+        android:name="com.example.navegacion.Contactos"
+        android:label="fragment_contactos"
+        tools:layout="@layout/fragment_contactos" >
+        <action
+            android:id="@+id/action_contactos_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/listas"
+        android:name="com.example.navegacion.Listas"
+        android:label="fragment_listas"
+        tools:layout="@layout/fragment_listas" >
+        <action
+            android:id="@+id/action_listas_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/configuracion"
+        android:name="com.example.navegacion.Configuracion"
+        android:label="fragment_configuracion"
+        tools:layout="@layout/fragment_configuracion" >
+        <action
+            android:id="@+id/action_configuracion_to_seguridad"
+            app:destination="@id/seguridad" />
+        <action
+            android:id="@+id/action_configuracion_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/seguridad"
+        android:name="com.example.navegacion.Seguridad"
+        android:label="fragment_seguridad"
+        tools:layout="@layout/fragment_seguridad" >
+        <action
+            android:id="@+id/action_seguridad_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_seguridad_to_configuracion"
+            app:destination="@id/configuracion" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.navegacion.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_seguridad"
+            app:destination="@id/seguridad" />
+        <action
+            android:id="@+id/action_home2_to_listas"
+            app:destination="@id/listas" />
+        <action
+            android:id="@+id/action_home2_to_configuracion"
+            app:destination="@id/configuracion" />
+        <action
+            android:id="@+id/action_home2_to_contactos"
+            app:destination="@id/contactos"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+</navigation>
